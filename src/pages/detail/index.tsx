@@ -4,7 +4,7 @@
  * @Description: detail 页面
  */
 import React, { FC } from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '@/navigator/index';
 
@@ -14,12 +14,19 @@ interface DetailProps {
 
 const DetailPage: FC<DetailProps> = ({ route }) => {
     return (
-        <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Detail</Text>
+        <View style={style.container}>
+            <Text>Detail Page</Text>
             <Text>{route.params?.id}</Text>
         </View>
     );
 };
+
+const style = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
 
 export default DetailPage;

@@ -4,7 +4,7 @@
  * @Description: home 页面
  */
 import React, { FC } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import { RootStackNavigation } from '@/navigator/index';
 
 interface HomeProps {
@@ -12,17 +12,25 @@ interface HomeProps {
 }
 
 const HomePage: FC<HomeProps> = ({ navigation }) => {
+    // 跳转详情页面
     const goDetail = () => {
-        navigation.navigate('Detail', { id: 100 });
+        navigation.navigate('Detail', { id: 1000 });
     };
 
     return (
-        <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home</Text>
+        <View style={style.container}>
+            <Text>Home Page</Text>
             <Button title="跳转到详情页" onPress={goDetail} />
         </View>
     );
 };
+
+const style = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
 
 export default HomePage;
