@@ -10,12 +10,12 @@ import {
     NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 
-import HomePage from '@/pages/home';
+import ButtonTabs from '@/navigator/buttonTabs';
 import DetailPage from '@/pages/detail';
 
 // 堆栈导航参数表
 export type RootStackParamList = {
-    Home: undefined;
+    ButtonTabs: undefined;
     Detail: {
         id: number;
     };
@@ -40,8 +40,8 @@ const Navigator = () => {
                     headerStyle: { backgroundColor: '#40a9ff' },
                     headerTitleAlign: 'center', // 头部标题 居中 显示
                 }}
-                initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomePage} />
+                initialRouteName="ButtonTabs">
+                <Stack.Screen name="ButtonTabs" component={ButtonTabs} />
                 <Stack.Screen name="Detail" component={DetailPage} />
             </Stack.Navigator>
         </NavigationContainer>

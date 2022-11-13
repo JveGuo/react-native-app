@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomePage from '@/pages/home';
 import ListenPage from '@/pages/listen';
@@ -23,14 +22,39 @@ const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const ButtonTabs = () => {
     return (
-        <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="Home" component={HomePage} />
-                <Tab.Screen name="Listen" component={ListenPage} />
-                <Tab.Screen name="Found" component={FoundPage} />
-                <Tab.Screen name="Account" component={AccountPage} />
-            </Tab.Navigator>
-        </NavigationContainer>
+        <Tab.Navigator
+            screenOptions={{
+                tabBarActiveTintColor: '#f86442',
+            }}>
+            <Tab.Screen
+                name="Home"
+                component={HomePage}
+                options={{
+                    tabBarLabel: '首页',
+                }}
+            />
+            <Tab.Screen
+                name="Listen"
+                component={ListenPage}
+                options={{
+                    tabBarLabel: '我听',
+                }}
+            />
+            <Tab.Screen
+                name="Found"
+                component={FoundPage}
+                options={{
+                    tabBarLabel: '发现',
+                }}
+            />
+            <Tab.Screen
+                name="Account"
+                component={AccountPage}
+                options={{
+                    tabBarLabel: '我的',
+                }}
+            />
+        </Tab.Navigator>
     );
 };
 
