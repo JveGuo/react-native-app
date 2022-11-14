@@ -1,7 +1,7 @@
 /**
  * @Author: jiawei.guo
  * @Date: 2022-11-13 21:49:37
- * @Description: button tabs
+ * @Description: bottom tabs
  */
 
 import React from 'react';
@@ -25,6 +25,7 @@ const ButtonTabs = () => {
         <Tab.Navigator
             screenOptions={{
                 tabBarActiveTintColor: '#f86442',
+                headerShown: false,
             }}>
             <Tab.Screen
                 name="Home"
