@@ -10,12 +10,15 @@ import {
     NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 
-import ButtonTabs from '@/navigator/buttonTabs';
+import BottomTabs from '@/navigator/bottomTabs';
 import DetailPage from '@/pages/detail';
 
 // 堆栈导航参数表
 export type RootStackParamList = {
-    ButtonTabs: undefined;
+    // 底部导航
+    BottomTabs: {
+        screen?: string;
+    };
     Detail: {
         id: number;
     };
@@ -23,6 +26,7 @@ export type RootStackParamList = {
 
 export type RootStackNavigation = NativeStackNavigationProp<RootStackParamList>;
 
+// 创建堆栈式导航
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Navigator = () => {
@@ -40,8 +44,8 @@ const Navigator = () => {
                     headerStyle: { backgroundColor: '#40a9ff' },
                     headerTitleAlign: 'center', // 头部标题 居中 显示
                 }}
-                initialRouteName="ButtonTabs">
-                <Stack.Screen name="ButtonTabs" component={ButtonTabs} />
+                initialRouteName="BottomTabs">
+                <Stack.Screen name="BottomTabs" component={BottomTabs} />
                 <Stack.Screen name="Detail" component={DetailPage} />
             </Stack.Navigator>
         </NavigationContainer>
