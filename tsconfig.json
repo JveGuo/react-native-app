@@ -12,7 +12,9 @@
       "@/navigator/*": ["navigator/*"],
       "@/utils/*": ["utils/*"],
       "@/components/*": ["components/*"],
-      "@/assets/*": ["assets/*"]
+      "@/assets/*": ["assets/*"],
+      "@/config/*": ["config/*"],
+      "@/model/*": ["model/*"],
     }
   }
 }

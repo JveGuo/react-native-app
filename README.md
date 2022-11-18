@@ -12,7 +12,7 @@ android
 
 ```bash
 yarn android
-# 或者
+# or
 yarn react-native run-android
 ```
 
@@ -20,6 +20,14 @@ ios
 
 ```bash
 yarn ios
-# 或者
+# or
 yarn react-native run-ios
+```
+
+#### 配置 alias 后不生效，清除缓存
+
+```bash
+watchman watch-del-all
+# and
+yarn start --reset-cache
 ```
