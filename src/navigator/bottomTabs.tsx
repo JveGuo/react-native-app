@@ -12,7 +12,6 @@ import AccountPage from '@/pages/account';
 import { RootStackNavigation, RootStackParamList } from './index';
 import {
     RouteProp,
-    TabNavigationState,
     getFocusedRouteNameFromRoute,
 } from '@react-navigation/native';
 import { LogBox } from 'react-native';
@@ -29,9 +28,7 @@ type BottomTabParamList = {
 // 创建底部导航
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
-type Route = RouteProp<RootStackParamList, 'BottomTabs'> & {
-    state?: TabNavigationState<BottomTabParamList>;
-};
+type Route = RouteProp<RootStackParamList, 'BottomTabs'>;
 
 interface BottomTabsProps {
     navigation: RootStackNavigation;
