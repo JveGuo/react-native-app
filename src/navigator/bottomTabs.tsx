@@ -16,6 +16,7 @@ import {
     getFocusedRouteNameFromRoute,
 } from '@react-navigation/native';
 import { LogBox } from 'react-native';
+import IconFont from '@/components/iconfont';
 
 // 底部导航（有哪些标签）
 type BottomTabParamList = {
@@ -80,6 +81,9 @@ const BottomTabs: FC<BottomTabsProps> = ({ navigation, route }) => {
                 component={HomePage}
                 options={{
                     tabBarLabel: '首页',
+                    tabBarIcon: ({ color, size }) => (
+                        <IconFont name="shouye" color={color} size={size} />
+                    ),
                 }}
             />
             <Tab.Screen
@@ -87,6 +91,9 @@ const BottomTabs: FC<BottomTabsProps> = ({ navigation, route }) => {
                 component={ListenPage}
                 options={{
                     tabBarLabel: '我听',
+                    tabBarIcon: ({ color, size }) => (
+                        <IconFont name="shoucang" color={color} size={size} />
+                    ),
                 }}
             />
             <Tab.Screen
@@ -94,6 +101,9 @@ const BottomTabs: FC<BottomTabsProps> = ({ navigation, route }) => {
                 component={FoundPage}
                 options={{
                     tabBarLabel: '发现',
+                    tabBarIcon: ({ color, size }) => (
+                        <IconFont name="faxian" color={color} size={size} />
+                    ),
                 }}
             />
             <Tab.Screen
@@ -101,6 +111,9 @@ const BottomTabs: FC<BottomTabsProps> = ({ navigation, route }) => {
                 component={AccountPage}
                 options={{
                     tabBarLabel: '我的',
+                    tabBarIcon: ({ color, size }) => (
+                        <IconFont name="user" color={color} size={size} />
+                    ),
                 }}
             />
         </Tab.Navigator>
