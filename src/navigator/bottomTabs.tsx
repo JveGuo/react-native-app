@@ -5,7 +5,7 @@
  */
 import React, { FC, useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomePage from '@/pages/home';
+// import HomePage from '@/pages/home';
 import ListenPage from '@/pages/listen';
 import FoundPage from '@/pages/found';
 import AccountPage from '@/pages/account';
@@ -16,10 +16,11 @@ import {
 } from '@react-navigation/native';
 import { LogBox } from 'react-native';
 import IconFont from '@/components/iconfont';
+import HomeTopTabs from '@/navigator/homeTabs';
 
 // 底部导航（有哪些标签）
 type BottomTabParamList = {
-    Home: undefined;
+    HomeTabs: undefined;
     Listen: undefined;
     Found: undefined;
     Account: undefined;
@@ -42,7 +43,7 @@ const getHeaderTitle = (route: Route) => {
     const routeName = getFocusedRouteNameFromRoute(route);
 
     switch (routeName) {
-        case 'Home':
+        case 'HomeTabs':
             return '首页';
         case 'Listen':
             return '我听';
@@ -74,8 +75,8 @@ const BottomTabs: FC<BottomTabsProps> = ({ navigation, route }) => {
                 headerShown: false,
             }}>
             <Tab.Screen
-                name="Home"
-                component={HomePage}
+                name="HomeTabs"
+                component={HomeTopTabs}
                 options={{
                     tabBarLabel: '首页',
                     tabBarIcon: ({ color, size }) => (
