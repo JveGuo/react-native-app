@@ -25,8 +25,13 @@ const HomeTopTabs = () => {
                 },
                 tabBarActiveTintColor: '#f86442',
                 tabBarInactiveTintColor: '#333',
+                tabBarPressColor: 'transparent',
             }}>
-            <Tab.Screen name="Home" component={HomePage} />
+            <Tab.Screen
+                name="Home"
+                component={HomePage}
+                options={{ tabBarLabel: '推荐' }}
+            />
             <Tab.Screen name="Settings" component={HomePage} />
             <Tab.Screen name="Settings1" component={HomePage} />
             <Tab.Screen name="Settings3" component={HomePage} />
