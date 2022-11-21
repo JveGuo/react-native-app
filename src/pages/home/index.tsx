@@ -8,6 +8,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { RootStackNavigation } from '@/navigator/index';
 import { connect, ConnectedProps } from 'react-redux';
 import { RootState } from '@/model/index';
+import Carousel from '@/components/carousel';
 
 const mapStateToProps = ({ home, loading }: RootState) => ({
     stateNum: home.num,
@@ -59,6 +60,8 @@ const HomePage: FC<HomeProps> = ({
             <Button title="add" onPress={handleAdd} />
             <Button title="asyncAdd" onPress={handleAsyncAdd} />
             <Button title="跳转到详情页" onPress={goDetail} />
+
+            <Carousel />
         </View>
     );
 };
