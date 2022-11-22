@@ -7,6 +7,7 @@ import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '@/navigator/index';
+import Carousel from '@/components/carousel';
 
 interface DetailProps {
     route: RouteProp<RootStackParamList, 'Detail'>;
@@ -17,6 +18,7 @@ const DetailPage: FC<DetailProps> = ({ route }) => {
         <View style={style.container}>
             <Text>Detail Page</Text>
             <Text>{route.params?.id}</Text>
+            <Carousel />
         </View>
     );
 };

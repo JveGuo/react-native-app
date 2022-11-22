@@ -4,9 +4,9 @@
  * @Description: 轮播图组件
  */
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import ReanimatedCarousel from 'react-native-reanimated-carousel';
-import { heightPercent, viewportWidth } from '@/utils/viewport';
+import { heightPercent, viewportWidth, widthPercent } from '@/utils/viewport';
 
 // 图片数据
 const imgList = [
@@ -20,9 +20,9 @@ const imgList = [
 ];
 
 const sliderWidth = viewportWidth;
-// const imgWidth = widthPercent(90);
+const imgWidth = widthPercent(90);
 const imgHeight = heightPercent(26);
-// const itemWidth = imgWidth + widthPercent(2) * 2;
+const itemWidth = imgWidth + widthPercent(2) * 2;
 
 const Carousel = () => {
     const carouselItem = ({ item }: { item: string }) => {
@@ -36,25 +36,40 @@ const Carousel = () => {
         );
     };
 
+    const snapToItem = (index: number) => {
+        console.log('current index:', index);
+    };
+
     return (
-        <ReanimatedCarousel
-            loop
-            width={sliderWidth}
-            height={sliderWidth / 2}
-            autoPlay={true}
-            data={imgList}
-            scrollAnimationDuration={1000}
-            onSnapToItem={index => console.log('current index:', index)}
-            renderItem={carouselItem}
-        />
+        <View style={styles.container}>
+            <ReanimatedCarousel
+                loop
+                width={itemWidth}
+                height={sliderWidth / 2}
+                autoPlay={true}
+                data={imgList}
+                scrollAnimationDuration={1000}
+                mode="parallax"
+                modeConfig={{
+                    // parallaxScrollingScale: 0.9,
+                    parallaxAdjacentItemScale: Math.pow(0.7, 1),
+                }}
+                onSnapToItem={snapToItem}
+                renderItem={carouselItem}
+            />
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
     image: {
         width: sliderWidth,
         height: imgHeight,
         textAlign: 'center',
+        borderRadius: 6,
     },
 });
 

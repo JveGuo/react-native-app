@@ -15,7 +15,7 @@ const HomeTopTabs = () => {
             screenOptions={{
                 lazy: true,
                 tabBarScrollEnabled: true,
-                tabBarItemStyle: { width: 80 },
+                tabBarItemStyle: { width: 80, padding: 0 },
                 tabBarIndicatorStyle: {
                     height: 4,
                     width: 20,
@@ -32,9 +32,9 @@ const HomeTopTabs = () => {
                 component={HomePage}
                 options={{ tabBarLabel: '推荐' }}
             />
-            <Tab.Screen name="Settings" component={HomePage} />
+            {/* <Tab.Screen name="Settings" component={HomePage} />
             <Tab.Screen name="Settings1" component={HomePage} />
-            <Tab.Screen name="Settings3" component={HomePage} />
+            <Tab.Screen name="Settings3" component={HomePage} /> */}
         </Tab.Navigator>
     );
 };
